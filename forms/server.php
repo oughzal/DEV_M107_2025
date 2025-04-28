@@ -1,6 +1,6 @@
 <?php
 foreach ($_SERVER as $key => $value) {
-    echo "<h1>$key => $value </h1>";
+    echo "<h1>$key => $value </h1>\n";
 
 }
 

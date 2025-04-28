@@ -17,4 +17,4 @@ if(Date("H")<12){
 <?php endif ?>
 
 <?php echo $_SERVER["HTTP_HOST"]; ?>
-<?php echo gethostbyaddr($_SERVER["HTTP_HOST"]); ?>
+<!-- <?php //echo gethostbyaddr($_SERVER["HTTP_HOST"]); ?> -->
