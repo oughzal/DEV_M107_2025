@@ -1,5 +1,9 @@
 <?php
 require_once('./connection.php');
+?>
+
+<?php
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $id = $_POST['id'];
     $nom = $_POST['nom'];

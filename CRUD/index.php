@@ -1,3 +1,16 @@
+<?php
+session_start();
+if(!isset($_SESSION["userID"])){
+    header("Location:login.php");
+    exit();
+}
+if(!isset($_COOKIE["userID"])){
+    header("Location:login.php");
+}else{
+
+    setcookie("userID", $_COOKIE["userID"], time() + 10*60);
+}
+?>
 <?php require_once('./connection.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,6 +23,7 @@
 </head>
 <body>
     <div class="container mt-5">
+        <?php include_once('./menu.php'); ?>
         <h1 class="text-center">Liste des stagiaires</h1>
         <a href="edit.php" class="btn btn-primary mb-3">Ajouter un stagiaire</a>
         <table class="table table-bordered table-striped mt-4">
@@ -35,7 +49,7 @@
                     <td><?=$row["groupe"]?></td>
                     <td class="text-end">
                         <a href="edit.php?id=<?=$row['id']?>"><i class="fa fa-edit"></i></a>
-                        <a href="delete.php?id=<?=$row['id']?>" ><i class="fa fa-trash"></i> </a>
+                        <a class="delete" href="delete.php?id=<?=$row['id']?>" ><i class="fa fa-trash"></i> </a>
                     </td>
                 </tr>
                 <?php endwhile; ?>
@@ -43,7 +57,20 @@
         </table>
   
 
-    <script src="../assets/bootstrap.bundle.min.js"></script>
+    <script src="../assets/bootstrap.bundle.js"></script>
+    <script>
+        let deleteLinks = document.querySelectorAll("a.delete")
+        deleteLinks.forEach(link => {
+            link.addEventListener("click", function(e) {
+                e.preventDefault()
+                if (confirm("Voulez-vous vraiment supprimer ce stagiaire ?")) {
+                    window.location.href = this.href
+                }
+            })
+        })
+
+        setcookie("userID", "<?=$_COOKIE["userID"]?>", time() + 10*60)  
+    </script>
     
 </body>
 </html>

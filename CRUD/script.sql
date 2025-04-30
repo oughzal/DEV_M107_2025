@@ -31,3 +31,14 @@ insert INTO Stagiaire (nom, prenom, idGroupe) VALUES
 ('Petit', 'Julien', 3),
 ('Garnier', 'Emma', 4),
 ('Roux', 'Antoine', 5);
+
+create Table user(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nom VARCHAR(50) NOT NULL,
+    prenom VARCHAR(50) NOT NULL,
+    login VARCHAR(100) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    role ENUM('admin', 'user') NOT NULL DEFAULT 'user'
+);
+
+select * from user;
