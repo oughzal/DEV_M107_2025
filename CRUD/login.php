@@ -30,7 +30,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
     <?php include_once('./styles.php'); ?>
 </head>
 <body>
-  <div class="conainter">
+  <div class="container">
     <h1 class="text-center">Login</h1>
     <form action="?" method="POST" class="container mt-4">
         <div class="mb-3">
@@ -42,7 +42,10 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
             <input type="password" id="password" name="password" class="form-control" required>
         </div>
         <button type="submit" class="btn btn-primary">Login</button>
+        <a href="signup.php" class="btn btn-primary">Signup</a>
     </form>
-  </div>  
+
+  </div> 
+ 
 </body>
 </html>

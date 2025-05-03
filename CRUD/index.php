@@ -4,12 +4,12 @@ if(!isset($_SESSION["userID"])){
     header("Location:login.php");
     exit();
 }
-if(!isset($_COOKIE["userID"])){
-    header("Location:login.php");
-}else{
+// if(!isset($_COOKIE["userID"])){
+//     header("Location:login.php");
+// }else{
 
-    setcookie("userID", $_COOKIE["userID"], time() + 10*60);
-}
+//     setcookie("userID", $_COOKIE["userID"], time() + 10*60);
+// }
 ?>
 <?php require_once('./connection.php'); ?>
 <!DOCTYPE html>

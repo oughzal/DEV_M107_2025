@@ -14,6 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
         }
 }
+}
 
 ?>
 
@@ -51,6 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <input type="password" id="passwordConfime" name="passwordConfirme" class="form-control" required>
             </div>
             <button type="submit" class="btn btn-primary">SignUp</button>
+            <a href="login.php" class="btn btn-primary">Login</a>
     </div>
 </body>
 </html>

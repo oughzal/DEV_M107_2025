@@ -8,10 +8,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $id = $_POST['id'];
     $nom = $_POST['nom'];
     $prenom = $_POST['prenom'];
+    $idGroupe = $_POST['idGroupe'];
 if($id == 0){
-    $sql = "INSERT INTO stagiaire (nom, prenom,idGroupe) VALUES ('$nom', '$prenom',1)";
+    $sql = "INSERT INTO stagiaire (nom, prenom,idGroupe) VALUES ('$nom', '$prenom', $idGroupe)";
 }else{
-    $sql = "UPDATE stagiaire SET nom='$nom', prenom='$prenom' WHERE id=$id";
+    $sql = "UPDATE stagiaire SET nom='$nom', prenom='$prenom', idGroupe='$idGroupe' WHERE id=$id";
 }
     if (mysqli_query($con, $sql)) {
         header("Location: index.php");
