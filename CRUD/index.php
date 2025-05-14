@@ -62,9 +62,9 @@ if(!isset($_SESSION["userID"])){
         let deleteLinks = document.querySelectorAll("a.delete")
         deleteLinks.forEach(link => {
             link.addEventListener("click", function(e) {
-                e.preventDefault()
-                if (confirm("Voulez-vous vraiment supprimer ce stagiaire ?")) {
-                    window.location.href = this.href
+                
+                if (! confirm("Voulez-vous vraiment supprimer ce stagiaire ?")) {
+                    e.preventDefault()
                 }
             })
         })
