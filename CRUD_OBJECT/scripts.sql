@@ -1,0 +1,8 @@
+-- Active: 1737679472715@@127.0.0.1@33066@tp1
+CREATE DATABASE tp1;
+
+CREATE Table stagiaire(
+    id int AUTO_INCREMENT PRIMARY KEY,
+    nom VARCHAR(40),
+    prenm VARCHAR(40)
+);
