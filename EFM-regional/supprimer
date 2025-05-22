@@ -1,0 +1,10 @@
+<?php
+if(isset($_GET["immat"])){
+    $con = seConnecter();
+    $immat = $_GET["immat"];
+    $query = "DELETE FROM voitures WHERE immat = '$immat'";
+    $result = mysqli_query($con, $query);
+    header("Location: liste-voiture.php");
+}
+
+?>
